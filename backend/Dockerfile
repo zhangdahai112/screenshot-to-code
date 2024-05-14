@@ -1,7 +1,16 @@
 FROM python:3.12-slim-bullseye
 
 ENV POETRY_VERSION 1.4.1
+<<<<<<< HEAD
+<<<<<<< HEAD
+RUN apt update && apt install net-tools 
+=======
 
+>>>>>>> parent of 9ed50d1 (适配国产机器)
+=======
+ENV HTTPS_PROXY http://172.27.74.185:7890
+
+>>>>>>> parent of 76754ea (调试dockerfile)
 # Install system dependencies
 RUN pip install "poetry==$POETRY_VERSION"
 
