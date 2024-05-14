@@ -11,10 +11,10 @@ WORKDIR /app
 # Copy only requirements to cache them in docker layer
 COPY poetry.lock pyproject.toml /app/
 
-RUN poetry source add --priority=default mirrors https://pypi.tuna.tsinghua.edu.cn/simple/
-
 # Disable the creation of virtual environments
 RUN poetry config virtualenvs.create false
+
+RUN poetry source add mirrors https://pypi.tuna.tsinghua.edu.cn/simple/
 
 # Install dependencies
 RUN poetry install
